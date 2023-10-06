@@ -9,14 +9,15 @@ urlpatterns = [
     path('login/',obtain_auth_token,name='login'),
     path('register/',views.register.as_view(),name='register'),
     path('welcome/',views.welcome.as_view(),name='welcome'),
-    path('paginationApi', views.paginationApi.as_view(), name='paginationApi'),
+    path('paginationApi/', views.paginationApi.as_view(), name='paginationApi'),
     
     #CRUD
-    path('task-list/', views.tasklist,name='task-list'),
-    path('task-detail/<str:pk>/', views.taskDetail,name='task-detail'),
-    path('task-create/', views.taskCreate,name='task-create'),
-    path('task-update/<str:pk>/', views.taskUpdate,name='task-update'),
-    path('task-delete/<str:pk>/', views.taskDelete,name='task-delete')
-]
+    path('create/', views.create,name='create'),
+    path('read/<str:pk>/', views.read,name='read'),
+    path('readAll/', views.readAll,name='readAll'),
+    path('update/<str:pk>/', views.update,name='update'),
+    path('delete/<str:pk>/', views.delete,name='delete'),
+    path('deleteAll/', views.deleteAll,name='deleteAll'),
 
+]
 
